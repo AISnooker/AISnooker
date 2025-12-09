@@ -111,12 +111,29 @@ html, body {
   font-weight: bold;
   color: #555;
 }
+#w99 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fdd835; /* Yellow/Warning color */
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000; /* Ensure it stays on top of all content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 </style>
 <script src="tf.min.js"></script>
 <script src="aisnooker.js"></script>
 <script src="AISnookerDemo.js"></script>
 </head>
 <body text=#000000 link=#261cdc bgColor=white>
+<div id="w99" style="display: none;">
+For the best experience, please open this webpage with Chrome browser
+</div>
 <div id="initDiv">
 <h2 id='w1'>Intelligent Snooker Video Analyzer</h2>
 <h2 id='w2'>Highlight Generation & Cue Ball Tracking</h2>
@@ -265,6 +282,7 @@ let languages = [
     [18, '次击球'],
     [19, '停止'],
     [20, '播放'],
+    [99, '建议使用Chrome浏览器打开此网页'],
   ]
 ];
 function sizeChange()
@@ -286,6 +304,23 @@ function setLang(id)
     document.getElementById('toCN').style.display='none';
   }
 }
+function detectBrowserAndWarn() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const warningBar = document.getElementById('w99');
+  
+  let isChrome = userAgent.includes('chrome') && !userAgent.includes('chromium');
+  
+  const isFirefox = userAgent.includes('firefox');
+  const isSafari = userAgent.includes('safari') && !userAgent.includes('chrome'); // Exclude Chrome which also contains 'safari'
+  const isEdge = userAgent.includes('edg') || userAgent.includes('edge');
+  
+  if (isFirefox || isSafari || (!isChrome && !isEdge)) {
+    if (warningBar) {
+      warningBar.style.display = 'block';
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', detectBrowserAndWarn);
 document.addEventListener('keydown', function(event)
 {
   const key = event.key;
