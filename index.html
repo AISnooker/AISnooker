@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Snooker Video Highlight and Cue Ball Path - AISnooker</title>
+<style>
+a {color: #261cdc;}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#initDiv {
+  position: absolute;
+  top: 50%;       
+  left: 50%;      
+  transform: translate(-50%, -50%);
+  max-height: 100vh;
+  max-width: 100vw; 
+  padding: 10px;    
+  overflow-y: auto; 
+  margin-top: 1px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+#fileInput {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.custom-file-upload {
+  /* Button appearance */
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.custom-file-upload:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+}
+.custom-file-upload:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+#panelDiv {
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  height: 65px;
+  width: 98%;
+  margin: 10px;
+}
+.action-button {
+  height: 35px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.action-button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+.action-button:disabled {
+  color: black; 
+  background-color: #ccc; 
+  cursor: not-allowed; 
+  transition: none;
+  transform: none;    
+  opacity: 0.6;
+}
+.action-button:active {
+  transform: translateY(1px);
+}
+.time-input {
+  width: 100px; 
+  height: 28px;    
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.time-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none; /* Remove default browser focus outline */
+}
+.separator {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+</style>
+<script src="tf.min.js"></script>
+<script src="aisnooker.js"></script>
+<script src="AISnookerDemo.js"></script>
+</head>
+<body text=#000000 link=#261cdc bgColor=white>
+<div id="initDiv">
+<h2 id='w1'>Intelligent Snooker Video Analyzer</h2>
+<h2 id='w2'>Highlight Generation & Cue Ball Tracking</h2>
+<p>
+<label for="fileInput" class="custom-file-upload" id='w3'>
+Open Local Snooker Video
+</label>
+<input type="file" id="fileInput" accept="video/mp4" onchange="loadVideo('')">
+</p>
+<hr>
+<p>
+<h3 id='w4'>Testing Demos under Various Camera and Lighting</h3>
+<table cellpadding="10">
+<tr valign=center>
+<td align=center>
+<a href=# onclick="loadVideo('demo/Iulian-Boiko-Fan-Zhengyi-2023-World-Championship-Qualifiers.mp4');return false">
+<img src="demo/Iulian-Boiko-Fan-Zhengyi-2023-World-Championship-Qualifiers.jpg"><br/>
+<span id='w5'>World Championship 2023</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/Stan-Moody-v-Matvei-Lagodzinschii-2022-WSF.mp4');return false">
+<img src="demo/Stan-Moody-v-Matvei-Lagodzinschii-2022-WSF.jpg"><br/>
+<span id='w6'>World Snooker Federation 2022</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/Hong-Kong-2019-Semi-Final-Bai-Yulu-vs-Ng-On-yee.mp4');return false">
+<img src="demo/Hong-Kong-2019-Semi-Final-Bai-Yulu-vs-Ng-On-yee.jpg"><br/>
+<span id='w7'>Hongkong Snooker Club</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/2024-NSW-final-Roger-Farebrother-vs-Vinnie-Calabrese.mp4');return false">
+<img src="demo/2024-NSW-final-Roger-Farebrother-vs-Vinnie-Calabrese.jpg"><br/>
+<span id='w8'>Australian Snooker Club</span></a>
+</td>
+</tr>
+<tr valign=center>
+<td align=center>
+<a href=# onclick="loadVideo('demo/147-Nutcharut-Wongharuthai.mp4');return false">
+<img src="demo/147-Nutcharut-Wongharuthai.jpg"><br/>
+<span id='w9'>Hi-End Snooker Club Thailand</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/Mohd-Ghouse-Break-121-ROCKET-SNOOKER-ACADEMY.mp4');return false">
+<img src="demo/Mohd-Ghouse-Break-121-ROCKET-SNOOKER-ACADEMY.jpg"><br/>
+<span id='w10'>Indian Snooker Club</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/high-break-Martyn-Taylor.mp4');return false">
+<img src="demo/high-break-Martyn-Taylor.jpg"><br/>
+<span id='w11'>Snooker Table at Home</span></a>
+</td>
+<td align=center>
+<a href=# onclick="loadVideo('demo/20250504-Baiyulu-Practice.mp4');return false">
+<img src="demo/20250504-Baiyulu-Practice.jpg"><br/>
+<span id='w12'>Practice Room in China</span></a>
+</td>
+</tr>
+</table>
+</p>
+<div style="font-size:14px" id='w13'>
+Snooker Video Analyzer demonstrates exceptional robustness, successfully processing footages captured across diverse cameras, angles, and lighting</div>
+<p style="font-size:12px">© 2025 - <a id="toCN" href=# onclick="setLang(0);return false" style="font-size:12px;text-decoration:none">中文</a></p>
+
+</div>
+
+<video width="1280" height="720" controls id="video" onloadedmetadata="afterLoadVideo()" ontimeupdate="updateVideo()" style="position:absolute;margin:0px;z-index:1;background:black;display:none"></video>
+<canvas id="image" width=1280 height=720 style="position:absolute;z-index:2;display:none"></canvas>
+<canvas id="pathCanvas" width=1280 height=720 style="background:transparent;position:absolute;z-index:5;display:none" onclick="playShot()"></canvas>
+
+<canvas id="canvasCapture" style="display:none" width=1280 height=720></canvas>
+<canvas id="canvasCrop" style="display:none" width=640 height=640></canvas>
+
+<div id="panelDiv" style="display:none">
+
+<div id="step1">
+<input type="text" class="time-input" id="beginTime" value="00:00:00">
+<span class="separator">–</span>
+<input type="text" class="time-input" id="endTime" value="00:00:00"> 
+<button onclick="doAnalyze()" class="action-button" id='w14'>Analyze Video</button>
+</div>
+
+<div id="step2" style="display:none">
+<span style="font-size:18px" id='w15'>Detecting table area -</span> <span style="font-size:18px" id="detectTablePercent">0%</span>
+&nbsp;&nbsp;<button id="nextStepButton" onclick="goStep2()" class="action-button"><span id='w16'>Next</span> &gt;&gt;</button>
+</div>
+
+<div id="step3" style="display:none">
+<span style="font-size:18px" id='w17'>Generating highlights -</span> <span style="font-size:18px" id="procPercent">0% - 0</span> 
+<span id='w18'>Shots</span>
+&nbsp;&nbsp;<button onclick="stopProc()" class="action-button" id='w19'>Stop</button>
+</div>
+
+<div id="navigate" style="display:none">
+<button onclick="prevShot()" class="action-button">&lt;&lt;</button>
+&nbsp;<span style="font-size:18px" id="BallShot">0 / 0</span>&nbsp;
+<button onclick="nextShot()" class="action-button">&gt;&gt;</button>
+&nbsp;&nbsp;<button onclick="playShot()" id="PlayButton" class="action-button"><span id='w20'>Play</span></button>
+</div>
+
+</div>
+<script>
+let VideoFileUrl = '';
+const videoObject = document.getElementById("video");
+const canvasCapture = document.getElementById("canvasCapture");
+const canvasCrop = document.getElementById('canvasCrop');
+const contextCapture = canvasCapture.getContext('2d');
+const contextCrop = canvasCrop.getContext('2d', {willReadFrequently:true});
+
+const imageE = document.getElementById("image");
+const pathCanvasE = document.getElementById("pathCanvas");
+const contextImage = imageE.getContext("2d");
+const contextPath = pathCanvasE.getContext("2d");
+
+const panelDivE = document.getElementById("panelDiv");
+
+let playerWidth=0, playerHeight=0;
+let imageWidthRatio = 1;
+let imageHeightRatio = 1;
+let tableLineDef = [372, 156, 905, 154, 1001, 622, 283, 623];
+let tableDetectScore = -1;
+let tableDetectTotal = 0;
+let TrackCueBallOn = 0;
+let AfterTrackAction = 0;
+let clearImageTimer = null;
+
+let langID = -1;
+let languages = [
+  [
+    [1, '智能分析斯诺克视频'],
+    [2, '剪辑击球片段 展现白球路线'],
+    [3, '打开本地斯诺克视频'],
+    [4, '不同场景拍摄的演示视频'],
+    [5, '2023年世锦赛'],
+    [6, '2022年世界斯诺克联合会'],
+    [7, '香港俱乐部'],
+    [8, '澳洲俱乐部'],
+    [9, 'Hi-End泰国俱乐部'],
+    [10, '印度俱乐部'],
+    [11, '家中的斯诺克'],
+    [12, '中国斯诺克练习房'],
+    [13, '斯诺克视频分析系统具有出色的环境适应能力，可精准处理各种摄像机、角度和光线下的视频'],
+    [14, '分析视频'],
+    [15, '正在检测桌面位置'],
+    [16, '下一步'],
+    [17, '正在剪辑击球片段'],
+    [18, '次击球'],
+    [19, '停止'],
+    [20, '播放'],
+  ]
+];
+function sizeChange()
+{
+  setTimeout(initVideoSize, 2000);
+}
+function setLang(id)
+{
+  langID = id;
+  let s, lang;
+  lang = languages[langID];
+  for(let n=0; n<lang.length; n++)
+  {
+    s = 'w' + lang[n][0];
+    document.getElementById(s).innerHTML = lang[n][1];
+  }
+  if(id == 0)
+  {
+    document.getElementById('toCN').style.display='none';
+  }
+}
+document.addEventListener('keydown', function(event)
+{
+  const key = event.key;
+  if(ProcStatus == 3)
+  {
+    if(key == 'ArrowRight')
+    {
+      nextShot();
+    }
+    else if(key == 'ArrowLeft')
+    {
+      prevShot();
+    }
+    else if(key == 'p' || key == 'P')
+    {
+      playShot();
+    }
+  }
+});
+window.onresize = sizeChange;
+</script>
+</body></html>
