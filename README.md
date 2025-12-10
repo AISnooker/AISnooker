@@ -24,7 +24,7 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 - Intel 1.8 GHz Intel Core i7, integrated graphics: 59 seconds, processes in 28% of video duration
 - iMac M4 8 Core CPU/GPU: 13 seconds, processes in 6% of video duration
 
-# Real-time Snooker Shot Replay System (Desktop Demo)
+# Real-time Snooker Replay System (Desktop Demo)
 
 Want to experience the full club-grade real-time replay system? 
 
@@ -47,6 +47,13 @@ We’re actively seeking partners to bring AISnooker to snooker/pool clubs, acad
 - Automated highlight clips with one-click download and social sharing
 - White-label web/app integration — run under your own brand and domain
 - Custom deployment (on-premise or cloud)
+
+**Technique**
+
+- Built with Java – runs on Linux for maximum stability and performance
+- A compact mini PC (Intel Core i7 + 8 GB RAM) can smoothly handle **4 concurrent 720p streams**
+- Supports live RTSP streams or automatic segmented recording/download from IP cameras
+- All processing done locally – ultra-low latency, no cloud dependency
 
 Interested in collaboration or commercial licensing?
 👉 [**Contact us now**](https://forms.gle/Ce2q3s13YcxZZXv88)
