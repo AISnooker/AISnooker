@@ -12,11 +12,10 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 - Upload and test your own local snooker videos instantly — see for yourself how the analyzer handles any footage flawlessly, right in your browser  
 - Automatic extraction of every shot as short, share-ready clips
 - Cue ball tracking with smooth running path visualization
-- Fully client-side with TensorFlow.js — no video uploads, no server, no calibration, just instant real-time analysis in your browser
 
-**Tech Highlights**
+**Technique**
 - Two high-accuracy table & ball detection models trained with YOLOv8
-- Full inference runs directly in the Chrome browser using TensorFlow.js (no server needed)
+- Full inference runs directly in the browser using TensorFlow.js (100 % client-side, no server)
 - Ultra efficient shot-detection algorithm enables true real-time processing of video streams
 
 **Performance ( test video of 3:30 duration )**
