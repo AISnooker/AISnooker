@@ -21,7 +21,7 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 
 **Performance ( test video of 3:30 duration )**
 
-- Intel 1.6 GHz Intel Core i5, integrated graphics: 1:09, processes in < 33% of video duration
+- Intel 1.6 GHz Intel Core i5, integrated graphics: 1:09, processes in 33% of video duration
 - Intel 1.8 GHz Intel Core i7, integrated graphics: 59 seconds, processes in 28% of video duration
 - iMac M4 8 Core CPU/GPU: 13 seconds, processes in 6% of video duration
 
