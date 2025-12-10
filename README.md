@@ -25,5 +25,14 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 - Intel 1.8 GHz Intel Core i7, integrated graphics: 59 seconds, processes in 28% of video duration
 - iMac M4 8 Core CPU/GPU: 13 seconds, processes in 6% of video duration
 
-Real-time capable on most modern PCs — entirely in the browser
+# Product & Commercial Cooperation
 
+We’re actively seeking partners to bring AISnooker to snooker/pool clubs, academies, training platforms.
+
+- Real-time shot analysis & instant replay systems for clubs  
+- White-label web/app integration  
+- Automated highlight production for tournaments and social media  
+- Custom deployment (on-premise or cloud)
+
+Interested in collaboration or commercial licensing?
+👉 [**Contact us now →**](https://forms.gle/Ce2q3s13YcxZZXv88)
