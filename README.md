@@ -7,14 +7,20 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 # [Snooker Video Analyzer Demo](https://aisnooker.github.io/AISnooker/)
 🚀 [Live online demo](https://aisnooker.github.io/AISnooker/) showcasing robust snooker shot detection, automated highlight generation, and precise cue ball tracking—tested across diverse cameras, angles, and lighting conditions.
 
-**Key Features & Tech Highlights**
+**Highlights**  
+- 8 built-in demo videos covering real-world extremes: Championship broadcasts with professional gear, club IP cameras, and poor lighting at home — all processed perfectly, zero calibration required
+- Upload and test your own local snooker videos instantly — see for yourself how the analyzer handles any footage flawlessly, right in your browser  
+- Automatic extraction of every shot as short, share-ready clips
+- Cue ball tracking with smooth running path visualization
+- Fully client-side with TensorFlow.js — no video uploads, no server, no calibration, just instant real-time analysis in your browser
+
+**Tech Highlights**
 - Two high-accuracy table & ball detection models trained with YOLOv8
 - Full inference runs directly in the Chrome browser using TensorFlow.js (no server needed)
 - Ultra efficient shot-detection algorithm enables true real-time processing of video streams
-- Cue ball tracking with smooth running path visualization
-- Automatic extraction of every shot as short, share-ready clips
 
-Try it now and see AI bring your snooker footage to life! 🎱✨
+**Performance**
+
 
 <!--
 **AISnooker/AISnooker** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
