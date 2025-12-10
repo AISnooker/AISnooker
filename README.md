@@ -1,6 +1,7 @@
 # Intelligent Snooker Video Analyzer
 
 An AI-powered Intelligent Snooker Video Analyzer that turns ordinary snooker footage into professional-grade insights. It automatically detects every shot, tracks cue ball path, and generates cinematic highlights in seconds.
+
 Built for clubs, academies, and passionate players, it delivers instant real-time playback and detailed shot review - helping you quickly spot execution errors, receive improvement suggestions, and track progress. With one click, create and share thrilling highlights with friends, bringing the joy of snooker to everyone who loves the game.
 
 <!--
