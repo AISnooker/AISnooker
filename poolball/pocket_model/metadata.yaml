@@ -1,7 +1,7 @@
-description: Ultralytics best model trained on /content/drive/MyDrive/AISnooker/dataset/pocket/data.yaml
+description: Ultralytics best model trained on /content/drive/MyDrive/AISnooker/pool/dataset/pocket/data.yaml
 author: Ultralytics
-date: '2025-10-01T23:44:10.134523'
-version: 8.3.204
+date: '2025-12-12T10:58:10.048099'
+version: 8.3.236
 license: AGPL-3.0 License (https://ultralytics.com/license)
 docs: https://docs.ultralytics.com
 stride: 32
