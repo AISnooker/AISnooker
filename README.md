@@ -50,7 +50,7 @@ We’re actively seeking partners to bring AISnooker to snooker/pool clubs, acad
 
 - Real-time shot analysis & instant replay systems for clubs
 - Automated highlight clips with one-click download and social sharing
-- Supports snooker and pool ball (The models are currently trained for classic green and blue color table only)
+- Supports snooker and pool ball
 - White-label web/app integration — run under your own brand and domain
 - Custom deployment (on-premise or cloud)
 
