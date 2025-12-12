@@ -57,7 +57,7 @@ We’re actively seeking partners to bring AISnooker to snooker/pool clubs, acad
 **Technique**
 
 - Built with Java – runs on Linux for maximum stability and performance
-- A compact mini PC (Intel Core i7 + 8 GB RAM) can smoothly handle **4 concurrent 720p streams**
+- A compact mini PC (Intel Core i7 + 8 GB RAM) can smoothly handle **4 concurrent 720p 30fps streams**
 - Supports live RTSP streams or automatic segmented recording/download from IP cameras
 - All processing done locally – ultra-low latency, no cloud dependency
 
