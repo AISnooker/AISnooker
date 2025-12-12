@@ -24,6 +24,11 @@ Built for clubs, academies, and passionate players, it delivers instant real-tim
 - Intel 1.8 GHz Intel Core i7, integrated graphics: 59 seconds, processes in 28% of video duration
 - iMac M4 8 Core CPU/GPU: 13 seconds, processes in 6% of video duration
 
+**Pool Ball Support**
+- [Live Pool Ball demo](https://aisnooker.github.io/AISnooker/poolball/) – currently optimized for classic green tables
+- 6 build-in demo videos covering popular styles: American 9-Ball and Chinese 8-Ball (Hey Ball)
+- Note: Some striped balls are visually very close to the cue ball → cue ball tracking accuracy is currently limited. Improved models are in active development!
+
 # Real-time Snooker Replay System (Desktop Demo)
 
 Want to experience the full club-grade real-time replay system? 
