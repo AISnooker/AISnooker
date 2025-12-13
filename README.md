@@ -63,3 +63,15 @@ We’re actively seeking partners to bring AISnooker to snooker/pool clubs, acad
 
 Interested in collaboration or commercial licensing?
 👉 [**Contact us now**](https://forms.gle/Ce2q3s13YcxZZXv88)
+
+<!--
+# Technical Challenges
+
+Developing a real-time snooker analyzer with no calibration required was no easy feat. Here are some of the toughest hurdles we overcame:
+
+- Image detection accuracy is not high enough
+- Image detection is time-consuming, on Intel 1.6 GHz Intel Core i5, it take 200ms
+- Ball movement is hard to define
+
+If you're a computer vision geek, or just love deep technical dives, you'll enjoy this: [Technical Challenges of Snooker Video Analyzer](https://aisnooker.github.io/AISnooker/challenges.html)
+!>
