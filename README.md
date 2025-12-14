@@ -44,6 +44,8 @@ We provide a ready-to-run desktop demo for macOS / Windows / Linux that turns an
 Interested in trying the desktop demo?
 [**Contact us**](https://forms.gle/Ce2q3s13YcxZZXv88)
 
+[![Watch Introduction](https://img.youtube.com/vi/qtv-8Uq3uAI/maxresdefault.jpg)](https://www.youtube.com/watch?v=qtv-8Uq3uAI)
+
 # Product & Commercial Cooperation
 
 We’re actively seeking partners to bring AISnooker to snooker/pool clubs, academies, training platforms.
